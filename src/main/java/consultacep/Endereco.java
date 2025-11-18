@@ -1,4 +1,4 @@
-package cepProject.src.main.java.consultacep;
+package consultacep;
 
 public class Endereco {
         
