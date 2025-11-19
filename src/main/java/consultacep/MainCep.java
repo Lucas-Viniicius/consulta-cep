@@ -1,15 +1,41 @@
 package consultacep;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class MainCep {
     
     public static void main(String[] args) throws IOException, InterruptedException {
         
-        //Teste
-        ApiCep cep = new ApiCep();
-        Endereco endereco = cep.buscarCep("01001000");
+        Scanner input = new Scanner(System.in);
+        ApiCep requisicaoCep = new ApiCep();
 
-        System.out.println(endereco);
+        String opcao = "";
+
+        while (!opcao.equalsIgnoreCase("nao")){
+
+            System.out.print("\nInforme o CEP: ");
+            String cep = input.nextLine();
+            
+            validandoCep(cep);
+
+            Endereco endereco = requisicaoCep.buscarCep(cep);
+
+            System.out.println("\n*************************");
+            System.out.println(" Dados do CEP: "+cep);
+            System.out.println("*************************");
+            System.out.println(endereco);
+
+            System.out.print("\nDeseja buscar outro CEP ? (sim/não) ");
+            opcao = input.nextLine();
+        }
+        input.close();
+    }
+
+    public static void validandoCep(String cep){
+
+        if (!cep.matches("\\d{8}")) {
+            throw new IllegalArgumentException("CEP inválido! Digite apenas 8 números.");
+        }
     }
 }

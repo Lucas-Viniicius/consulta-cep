@@ -29,7 +29,8 @@ public class Endereco {
 
     @Override 
     public String toString(){
-        return "\nInformações sobre o CEP: "+this.cep+"\n"+
+        return 
+        "\nCEP: "+this.cep+
         "\nRegião: "+this.regiao+
         "\nEstado: "+this.estado+
         "\nCidade: "+this.cidade+
