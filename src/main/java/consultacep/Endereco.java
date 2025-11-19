@@ -1,12 +1,16 @@
 package consultacep;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Endereco {
         
     private String cep;
     private String regiao;
     private String estado;
+    @SerializedName("localidade")
     private String cidade;
     private String bairro;
+    @SerializedName("logradouro")
     private String local;
     private String uf;
     private int ddd;
