@@ -27,6 +27,10 @@ public class Endereco {
         this.ddd = ddd;
     }
 
+    public String getCep(){
+        return this.cep;
+    }
+
     @Override 
     public String toString(){
         return 

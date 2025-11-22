@@ -8,6 +8,7 @@ public class MainCep {
     public static void main(String[] args) throws IOException, InterruptedException {
         
         Scanner input = new Scanner(System.in);
+        ArquivoCep arquivo = new ArquivoCep();
         ApiCep requisicaoCep = new ApiCep();
 
         String opcao = "";
@@ -17,6 +18,8 @@ public class MainCep {
             System.out.print("\nInforme o CEP: ");
             String cep = input.nextLine();
             
+            cep = cep.trim(); // Remove os espaços em branco
+
             validandoCep(cep);
 
             Endereco endereco = requisicaoCep.buscarCep(cep);
@@ -26,8 +29,12 @@ public class MainCep {
             System.out.println("*************************");
             System.out.println(endereco);
 
+            arquivo.arquivo(endereco);
+
             System.out.print("\nDeseja buscar outro CEP ? (sim/não) ");
             opcao = input.nextLine();
+            opcao = opcao.trim();
+
         }
         input.close();
     }

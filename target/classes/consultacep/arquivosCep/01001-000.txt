@@ -1,0 +1,9 @@
+
+CEP: 01001-000
+Região: Sudeste
+Estado: São Paulo
+Cidade: São Paulo
+Bairro: Sé
+Local: Praça da Sé
+Uf: SP
+DDD: 11
